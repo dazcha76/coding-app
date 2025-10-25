@@ -1,5 +1,6 @@
 import Card from './components/Card';
-import { reactSyntax } from './reactSyntax';
+import Practice from './pages/Practice';
+import { reactSyntax } from './data/reactSyntax';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         title={reactSyntax.exports.named.title}
         code={reactSyntax.exports.named.code}
       />
+
+      <Practice />
     </>
   );
 }
