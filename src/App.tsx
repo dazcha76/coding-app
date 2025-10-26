@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Compare from './pages/Compare';
 import Learn from './pages/Learn';
 import Practice from './pages/Practice';
+import './App.css';
 
 function App() {
   const [activeTab, setActiveTab] = useState('');

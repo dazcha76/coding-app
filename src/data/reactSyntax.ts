@@ -1,4 +1,9 @@
 export const reactSyntax = {
+  clickEvents: {
+    step1: '<button onClick={handleClick}>Click me</button>',
+    step2: '',
+    step3: '',
+  },
   exports: {
     default: {
       title: 'Default Export',
