@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Compare from './pages/Compare';
-import Learn from './pages/Learn';
+import HowTo from './pages/HowTo';
 import Practice from './pages/Practice';
 import './App.css';
 
@@ -17,14 +17,14 @@ function App() {
 
       <nav>
         <ul>
-          <li onClick={() => onTabClick('learn')}>Learn</li>
+          <li onClick={() => onTabClick('learn')}>How To</li>
           <li onClick={() => onTabClick('compare')}>Compare</li>
           <li onClick={() => onTabClick('practice')}>Practice</li>
         </ul>
       </nav>
 
       <div>
-        {activeTab === 'learn' && <Learn />}
+        {activeTab === 'learn' && <HowTo />}
         {activeTab === 'compare' && <Compare />}
         {activeTab === 'practice' && <Practice />}
       </div>

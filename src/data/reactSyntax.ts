@@ -4,6 +4,7 @@ export const reactSyntax = {
     step2: '',
     step3: '',
   },
+  displayingVariables: '<p>{ name }</p>',
   exports: {
     default: {
       title: 'Default Export',

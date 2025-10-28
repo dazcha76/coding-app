@@ -11,18 +11,17 @@ export default function Compare() {
       <div className="columns">
         <div>
           <h3>JavaScript</h3>
-          <ul>
-            <li>{javaScriptSyntax.clickEvents.step1}</li>
-            <li>{javaScriptSyntax.clickEvents.step2}</li>
-            <li>{javaScriptSyntax.clickEvents.step3}</li>
-          </ul>
+          <p>html</p>
+          <p>{javaScriptSyntax.clickEvents.step1}</p>
+          <p>js</p>
+          <p>{javaScriptSyntax.clickEvents.step2}</p>
+          <p>{javaScriptSyntax.clickEvents.step3}</p>
         </div>
 
         <div>
           <h3>React</h3>
-          <ul>
-            <li>{reactSyntax.clickEvents.step1}</li>
-          </ul>
+          <p>jsx</p>
+          <p>{reactSyntax.clickEvents.step1}</p>
         </div>
       </div>
     </>
