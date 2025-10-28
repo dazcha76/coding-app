@@ -17,14 +17,14 @@ function App() {
 
       <nav>
         <ul>
-          <li onClick={() => onTabClick('learn')}>How To</li>
+          <li onClick={() => onTabClick('how-to')}>How To</li>
           <li onClick={() => onTabClick('compare')}>Compare</li>
           <li onClick={() => onTabClick('practice')}>Practice</li>
         </ul>
       </nav>
 
       <div>
-        {activeTab === 'learn' && <HowTo />}
+        {activeTab === 'how-to' && <HowTo />}
         {activeTab === 'compare' && <Compare />}
         {activeTab === 'practice' && <Practice />}
       </div>
