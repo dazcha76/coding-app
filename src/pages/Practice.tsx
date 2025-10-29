@@ -1,4 +1,4 @@
-import { debugging } from '../data/debugging';
+import { useState, type ChangeEvent } from 'react';
 import {
   SandpackProvider,
   SandpackLayout,
@@ -7,12 +7,22 @@ import {
   SandpackPreview,
 } from '@codesandbox/sandpack-react';
 import { aquaBlue } from '@codesandbox/sandpack-themes';
-import { useState, type ChangeEvent } from 'react';
+import { javaScriptChallenges } from '../data/javaScriptChallenges';
+import { angularChallenges } from '../data/angularChallenges';
+import { reactChallenges } from '../data/reactChallenges';
+import { htmlChallenges } from '../data/htmlChallenges';
 import type { Challenge, Template } from '../types';
+
+const exerciseMap = {
+  angular: angularChallenges,
+  react: reactChallenges,
+  static: htmlChallenges,
+  vanilla: javaScriptChallenges,
+};
 
 export default function Practice() {
   const [language, setLanguage] = useState<Template>('vanilla');
-  const [challenge, setChallenge] = useState<Challenge>(null);
+  const [challenge, setChallenge] = useState<Challenge>();
 
   const files = {};
 
@@ -21,8 +31,9 @@ export default function Practice() {
   };
 
   const handleGetChallenge = () => {
-    const randomIndex = Math.floor(Math.random() * (debugging.length - 1));
-    setChallenge(debugging[randomIndex]);
+    const challenges = exerciseMap[language];
+    const randomIndex = Math.floor(Math.random() * challenges.length);
+    setChallenge(challenges[randomIndex]);
   };
 
   return (
@@ -37,12 +48,13 @@ export default function Practice() {
         <option value="vanilla">JavaScript</option>
       </select>
 
-      <button onClick={handleGetChallenge}>Get a challenge</button>
+      <button onClick={handleGetChallenge}>Surprise me!</button>
 
       {challenge && (
         <>
           <p>{challenge.instruction}</p>
           {challenge.hint && <p>{challenge.hint}</p>}
+          <p>let myArray = {challenge.exampleArray}</p>
         </>
       )}
 
