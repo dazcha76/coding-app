@@ -1,3 +1,3 @@
-import type { Challenge } from '../types';
+import type { Challenges } from '../types';
 
-export const htmlChallenges: Challenge[] = [];
+export const htmlChallenges: Challenges = {};

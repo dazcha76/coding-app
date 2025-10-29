@@ -11,7 +11,7 @@ import { javaScriptChallenges } from '../data/javaScriptChallenges';
 import { angularChallenges } from '../data/angularChallenges';
 import { reactChallenges } from '../data/reactChallenges';
 import { htmlChallenges } from '../data/htmlChallenges';
-import type { ChallengeDetails, Template } from '../types';
+import type { ChallengeDetails, Challenges, Template } from '../types';
 
 const exerciseMap = {
   angular: angularChallenges,
@@ -22,6 +22,8 @@ const exerciseMap = {
 
 export default function Practice() {
   const [language, setLanguage] = useState<Template>('vanilla');
+  const [challengeSet, setChallengeSet] =
+    useState<Challenges>(javaScriptChallenges);
   const [challenge, setChallenge] = useState<ChallengeDetails>();
   const [feature, setFeature] = useState<string>();
 
@@ -29,19 +31,20 @@ export default function Practice() {
 
   const handleLanguageSelect = (event: ChangeEvent<HTMLSelectElement>) => {
     setLanguage(event.target.value as Template);
+    setChallengeSet(exerciseMap[event.target.value as Template]);
   };
 
   const handleChallengeSelect = (event: ChangeEvent<HTMLSelectElement>) => {
-    const challenges = exerciseMap[language];
     setFeature(event.target.value);
-    setChallenge(challenges[0][event.target.value]);
+    setChallenge(challengeSet[event.target.value]);
   };
 
   const handleGetChallenge = () => {
     const challenges = exerciseMap[language];
-    const keys = Object.keys(challenges[0]);
+    const keys = Object.keys(challenges);
     const randomKey = keys[Math.floor(Math.random() * keys.length)];
-    setChallenge(challenges[0][randomKey]);
+    setFeature(randomKey);
+    setChallenge(challenges[randomKey]);
   };
 
   return (
@@ -59,16 +62,16 @@ export default function Practice() {
       <label htmlFor="challenge">Choose a challenge:</label>
       <select id="challenge" value={feature} onChange={handleChallengeSelect}>
         <option value=""></option>
-        <option value="forEach">forEach()</option>
-        <option value="map">map()</option>
-        <option value="filter">filter()</option>
-        <option value="find">find()</option>
-        <option value="every">every()</option>
-        <option value="some">some()</option>
-        <option value="reduce">reduce()</option>
+        {Object.keys(challengeSet).map((key) => (
+          <option key={key} value={key}>
+            {key}
+          </option>
+        ))}
       </select>
 
       <button onClick={handleGetChallenge}>Surprise me!</button>
+
+      <h3>{feature}</h3>
 
       {challenge && (
         <>

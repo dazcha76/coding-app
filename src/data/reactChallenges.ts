@@ -1,3 +1,3 @@
-import type { Challenge } from '../types';
+import type { Challenges } from '../types';
 
-export const reactChallenges: Challenge[] = [];
+export const reactChallenges: Challenges = {};
