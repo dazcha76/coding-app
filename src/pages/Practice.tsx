@@ -11,7 +11,7 @@ import { javaScriptChallenges } from '../data/javaScriptChallenges';
 import { angularChallenges } from '../data/angularChallenges';
 import { reactChallenges } from '../data/reactChallenges';
 import { htmlChallenges } from '../data/htmlChallenges';
-import type { Challenge, Template } from '../types';
+import type { ChallengeDetails, Template } from '../types';
 
 const exerciseMap = {
   angular: angularChallenges,
@@ -22,7 +22,8 @@ const exerciseMap = {
 
 export default function Practice() {
   const [language, setLanguage] = useState<Template>('vanilla');
-  const [challenge, setChallenge] = useState<Challenge>();
+  const [challenge, setChallenge] = useState<ChallengeDetails>();
+  const [feature, setFeature] = useState<string>();
 
   const files = {};
 
@@ -30,10 +31,17 @@ export default function Practice() {
     setLanguage(event.target.value as Template);
   };
 
+  const handleChallengeSelect = (event: ChangeEvent<HTMLSelectElement>) => {
+    const challenges = exerciseMap[language];
+    setFeature(event.target.value);
+    setChallenge(challenges[0][event.target.value]);
+  };
+
   const handleGetChallenge = () => {
     const challenges = exerciseMap[language];
-    const randomIndex = Math.floor(Math.random() * challenges.length);
-    setChallenge(challenges[randomIndex]);
+    const keys = Object.keys(challenges[0]);
+    const randomKey = keys[Math.floor(Math.random() * keys.length)];
+    setChallenge(challenges[0][randomKey]);
   };
 
   return (
@@ -48,13 +56,25 @@ export default function Practice() {
         <option value="vanilla">JavaScript</option>
       </select>
 
+      <label htmlFor="challenge">Choose a challenge:</label>
+      <select id="challenge" value={feature} onChange={handleChallengeSelect}>
+        <option value=""></option>
+        <option value="forEach">forEach()</option>
+        <option value="map">map()</option>
+        <option value="filter">filter()</option>
+        <option value="find">find()</option>
+        <option value="every">every()</option>
+        <option value="some">some()</option>
+        <option value="reduce">reduce()</option>
+      </select>
+
       <button onClick={handleGetChallenge}>Surprise me!</button>
 
       {challenge && (
         <>
           <p>{challenge.instruction}</p>
           {challenge.hint && <p>{challenge.hint}</p>}
-          <p>let myArray = {challenge.exampleArray}</p>
+          <p>const myArray = {challenge.exampleArray}</p>
         </>
       )}
 
