@@ -5,6 +5,7 @@ import {
   SandpackFileExplorer,
   SandpackCodeEditor,
   SandpackPreview,
+  SandpackConsole,
 } from '@codesandbox/sandpack-react';
 import { aquaBlue } from '@codesandbox/sandpack-themes';
 import { javaScriptChallenges } from '../data/javaScriptChallenges';
@@ -71,7 +72,7 @@ export default function Practice() {
 
       <button onClick={handleGetChallenge}>Surprise me!</button>
 
-      <h3>{feature}</h3>
+      {feature && <h3>{feature}</h3>}
 
       {challenge && (
         <>
@@ -87,6 +88,7 @@ export default function Practice() {
           <SandpackCodeEditor closableTabs showTabs />
           <SandpackPreview />
         </SandpackLayout>
+        <SandpackConsole />
       </SandpackProvider>
     </>
   );
