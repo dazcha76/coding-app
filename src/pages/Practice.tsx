@@ -8,9 +8,9 @@ import {
   SandpackConsole,
 } from '@codesandbox/sandpack-react';
 import { aquaBlue } from '@codesandbox/sandpack-themes';
-import { javaScriptChallenges } from '../data/javaScriptChallenges';
-import { angularChallenges } from '../data/angularChallenges';
-import { reactChallenges } from '../data/reactChallenges';
+import { javaScriptChallenges } from '../data/javaScript/javaScriptChallenges';
+import { angularChallenges } from '../data/angular/angularChallenges';
+import { reactChallenges } from '../data/react/reactChallenges';
 import { htmlChallenges } from '../data/htmlChallenges';
 import type { ChallengeDetails, Challenges, Template } from '../types';
 

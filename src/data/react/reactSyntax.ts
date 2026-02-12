@@ -1,4 +1,15 @@
 export const reactSyntax = {
+  commands: {
+    // createApp: 'ng new my-first-app',
+    // createComponent: {
+    //   full: 'ng generate component user',
+    //   short: 'ng g c user',
+    //   noTest: 'ng g c user –skip-tests',
+    //   path: 'ng g c users/user',
+    // },
+    // install: 'npm install',
+    run: 'npm run dev',
+  },
   clickEvents: {
     step1: '<button onClick={handleClick}>Click me</button>',
     step2: '',

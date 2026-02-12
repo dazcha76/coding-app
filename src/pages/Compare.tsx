@@ -1,5 +1,5 @@
-import { javaScriptSyntax } from '../data/javaScriptSyntax';
-import { reactSyntax } from '../data/reactSyntax';
+import { javaScriptSyntax } from '../data/javaScript/javaScriptSyntax';
+import { reactSyntax } from '../data/react/reactSyntax';
 
 export default function Compare() {
   return (
