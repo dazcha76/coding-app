@@ -7,6 +7,8 @@ export const angularSyntax = {
     "'Angular Language Service' by angular.io",
     "'Angular Essentials' by John Papa",
   ],
+  debugging:
+    'Angular DevTools (https://chromewebstore.google.com/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh?hl=en-US&utm_source=ext_sidebar)',
   commands: {
     createApp: 'ng new my-first-app',
     createComponent: {
@@ -75,7 +77,7 @@ export class HeaderComponent {}
       let: "this.userName = 'Bob'",
       const: 'n/a',
     },
-    displaying: {
+    usage: {
       text: {
         name: 'Data Binding',
         code: {

@@ -1,4 +1,8 @@
 export const reactSyntax = {
+  setup: [],
+  vsc: [],
+  debugging:
+    'React Developer Tools (https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en-US&utm_source=ext_sidebar)',
   commands: {
     // createApp: 'ng new my-first-app',
     // createComponent: {
@@ -15,7 +19,18 @@ export const reactSyntax = {
     step2: '',
     step3: '',
   },
-  displayingVariables: '<p>{ name }</p>',
+  variables: {
+    usage: {
+      text: {
+        name: '',
+        code: '<p>{ name }</p>',
+      },
+      events: {
+        name: '',
+        code: '<button onClick={onSelectUser}>Click me</button>',
+      },
+    },
+  },
   exports: {
     default: {
       title: 'Default Export',

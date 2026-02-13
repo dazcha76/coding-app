@@ -1,5 +1,13 @@
-.columns {
-  display: flex;
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* sandpack console */

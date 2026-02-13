@@ -21,47 +21,55 @@ export default function Compare() {
     <>
       <h2>Compare</h2>
 
-      <p>{language}</p>
-      <p>{targetLanguage}</p>
+      <div className="two-columns">
+        <div>
+          <label htmlFor="language">I know:</label>
+          <select
+            id="language"
+            value={language}
+            onChange={handleLanguageSelect}
+          >
+            <option value=""></option>
+            <option value="Angular">Angular</option>
+            <option value="Flutter">Flutter</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="React">React</option>
+          </select>
+        </div>
 
-      <label htmlFor="language">I know:</label>
-      <select id="language" value={language} onChange={handleLanguageSelect}>
-        <option value=""></option>
-        <option value="Angular">Angular</option>
-        <option value="Flutter">Flutter</option>
-        <option value="JavaScript">JavaScript</option>
-        <option value="React">React</option>
-      </select>
-
-      <label htmlFor="targetLanguage">I'm using:</label>
-      <select
-        id="targetLanguage"
-        value={targetLanguage}
-        onChange={handleTargetLanguageSelect}
-      >
-        <option value=""></option>
-        <option value="Angular">Angular</option>
-        <option value="Flutter">Flutter</option>
-        <option value="JavaScript">JavaScript</option>
-        <option value="React">React</option>
-      </select>
+        <div>
+          <label htmlFor="targetLanguage">I'm using:</label>
+          <select
+            id="targetLanguage"
+            value={targetLanguage}
+            onChange={handleTargetLanguageSelect}
+          >
+            <option value=""></option>
+            <option value="Angular">Angular</option>
+            <option value="Flutter">Flutter</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="React">React</option>
+          </select>
+        </div>
+      </div>
 
       <h3>Click events in JavaScript vs. React</h3>
 
-      <div className="columns">
+      <div className="two-columns">
         <div>
           <h3>JavaScript</h3>
           <p>html</p>
-          <p>{javaScriptSyntax.clickEvents.step1}</p>
+          <code>{javaScriptSyntax.clickEvents.step1}</code>
           <p>js</p>
-          <p>{javaScriptSyntax.clickEvents.step2}</p>
-          <p>{javaScriptSyntax.clickEvents.step3}</p>
+          <code>{javaScriptSyntax.clickEvents.step2}</code>
+          <br />
+          <code>{javaScriptSyntax.clickEvents.step3}</code>
         </div>
 
         <div>
           <h3>React</h3>
           <p>jsx</p>
-          <p>{reactSyntax.clickEvents.step1}</p>
+          <code>{reactSyntax.clickEvents.step1}</code>
         </div>
       </div>
     </>
