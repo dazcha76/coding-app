@@ -4,7 +4,7 @@ import { reactSyntax } from '../data/react/reactSyntax';
 import type { Language } from '../types';
 
 export default function HowTo() {
-  const [language, setLanguage] = useState<Language>(undefined);
+  const [language, setLanguage] = useState<Language>();
 
   const handleLanguageSelect = (event: ChangeEvent<HTMLSelectElement>) => {
     setLanguage(event.target.value as Language);

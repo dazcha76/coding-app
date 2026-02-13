@@ -12,7 +12,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="container">
       <h1>Side By Side Code</h1>
 
       <nav>
@@ -28,7 +28,7 @@ function App() {
         {activeTab === 'compare' && <Compare />}
         {activeTab === 'practice' && <Practice />}
       </div>
-    </>
+    </div>
   );
 }
 
