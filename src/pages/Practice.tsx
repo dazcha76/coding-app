@@ -52,23 +52,37 @@ export default function Practice() {
     <>
       <h2>Practice</h2>
 
-      <label htmlFor="language">Choose a language:</label>
-      <select id="language" value={language} onChange={handleLanguageSelect}>
-        <option value="static">HTML & CSS</option>
-        <option value="angular">Angular</option>
-        <option value="react">React</option>
-        <option value="vanilla">JavaScript</option>
-      </select>
+      <div className="two-columns">
+        <div>
+          <label htmlFor="language">Choose a language:</label>
+          <select
+            id="language"
+            value={language}
+            onChange={handleLanguageSelect}
+          >
+            <option value="static">HTML & CSS</option>
+            <option value="angular">Angular</option>
+            <option value="react">React</option>
+            <option value="vanilla">JavaScript</option>
+          </select>
+        </div>
 
-      <label htmlFor="challenge">Choose a challenge:</label>
-      <select id="challenge" value={feature} onChange={handleChallengeSelect}>
-        <option value=""></option>
-        {Object.keys(challengeSet).map((key) => (
-          <option key={key} value={key}>
-            {key}
-          </option>
-        ))}
-      </select>
+        <div>
+          <label htmlFor="challenge">Choose a challenge:</label>
+          <select
+            id="challenge"
+            value={feature}
+            onChange={handleChallengeSelect}
+          >
+            <option value=""></option>
+            {Object.keys(challengeSet).map((key) => (
+              <option key={key} value={key}>
+                {key}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
 
       <button onClick={handleGetChallenge}>Surprise me!</button>
 

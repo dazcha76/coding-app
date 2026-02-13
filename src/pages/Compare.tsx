@@ -1,20 +1,21 @@
 import { useState, type ChangeEvent } from 'react';
 import { javaScriptSyntax } from '../data/javaScript/javaScriptSyntax';
 import { reactSyntax } from '../data/react/reactSyntax';
-import type { Languages } from '../types';
+import type { Language } from '../types';
+import Icon from '../components/Icon';
 
 export default function Compare() {
-  const [language, setLanguage] = useState<Languages>(undefined);
-  const [targetLanguage, setTargetLanguage] = useState<Languages>(undefined);
+  const [language, setLanguage] = useState<Language>();
+  const [targetLanguage, setTargetLanguage] = useState<Language>();
 
   const handleLanguageSelect = (event: ChangeEvent<HTMLSelectElement>) => {
-    setLanguage(event.target.value as Languages);
+    setLanguage(event.target.value as Language);
   };
 
   const handleTargetLanguageSelect = (
     event: ChangeEvent<HTMLSelectElement>,
   ) => {
-    setTargetLanguage(event.target.value as Languages);
+    setTargetLanguage(event.target.value as Language);
   };
 
   return (
@@ -30,10 +31,10 @@ export default function Compare() {
             onChange={handleLanguageSelect}
           >
             <option value=""></option>
-            <option value="Angular">Angular</option>
-            <option value="Flutter">Flutter</option>
-            <option value="JavaScript">JavaScript</option>
-            <option value="React">React</option>
+            <option value="angular">Angular</option>
+            <option value="flutter">Flutter</option>
+            <option value="javascript">JavaScript</option>
+            <option value="react">React</option>
           </select>
         </div>
 
@@ -45,10 +46,10 @@ export default function Compare() {
             onChange={handleTargetLanguageSelect}
           >
             <option value=""></option>
-            <option value="Angular">Angular</option>
-            <option value="Flutter">Flutter</option>
-            <option value="JavaScript">JavaScript</option>
-            <option value="React">React</option>
+            <option value="angular">Angular</option>
+            <option value="flutter">Flutter</option>
+            <option value="javascript">JavaScript</option>
+            <option value="react">React</option>
           </select>
         </div>
       </div>
@@ -57,6 +58,7 @@ export default function Compare() {
 
       <div className="two-columns">
         <div>
+          {language && <Icon language={language} />}
           <h3>JavaScript</h3>
           <p>html</p>
           <code>{javaScriptSyntax.clickEvents.step1}</code>
@@ -67,6 +69,7 @@ export default function Compare() {
         </div>
 
         <div>
+          {targetLanguage && <Icon language={targetLanguage} />}
           <h3>React</h3>
           <p>jsx</p>
           <code>{reactSyntax.clickEvents.step1}</code>

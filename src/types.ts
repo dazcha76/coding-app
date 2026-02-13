@@ -6,11 +6,6 @@ export type ChallengeDetails = {
   exampleArray: string;
 };
 
-export type Languages =
-  | 'Angular'
-  | 'Flutter'
-  | 'Javascript'
-  | 'React'
-  | undefined;
+export type Language = 'angular' | 'flutter' | 'javascript' | 'react';
 
 export type Template = 'angular' | 'react' | 'static' | 'vanilla';
