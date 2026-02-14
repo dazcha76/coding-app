@@ -14,7 +14,7 @@ export default function Icon({ language }: IconProps) {
 
   return (
     <img
-      src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${languageMap[language]}`}
+      src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${languageMap[language.toLowerCase()]}`}
       width="50"
     />
   );

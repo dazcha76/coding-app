@@ -14,3 +14,23 @@
 .sp-c-iVbYez {
   height: 130px;
 }
+
+.framework {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+/* Dropdowns */
+
+.dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 160px;
+  padding-right: 1rem;
+}

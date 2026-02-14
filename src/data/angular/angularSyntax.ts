@@ -107,7 +107,7 @@ onSelectUser() {
    console.log('Click!');
 }
 `,
-          html: `<button (click)=”onSelectUser()”>Click me</button>`,
+          html: `<button (click)="onSelectUser()">Click me</button>`,
         },
       },
     },

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Compare from './pages/Compare';
 import HowTo from './pages/HowTo';
 import Practice from './pages/Practice';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
